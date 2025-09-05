@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* kendi animasyon class'ların */
+@layer utilities {
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 8ch; /* "Merhaba" kelimesi 7 karakter */
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: currentColor;
+    }
+  }
+
+  .typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fbbf24; /* amber-400 */
+    width: 0;
+    animation: typing 2s normal forwards, blink 0.7s step-end infinite;
+  }
+}
