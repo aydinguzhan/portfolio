@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Pilcrow } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import React from "react";
 
 type Props = {};
