@@ -10,10 +10,10 @@ const FooterItem = ({
   children: React.ReactNode;
 }) => {
   return (
-    <span className="flex-1 flex  justify-center items-center gap-2  ">
+    <div className="flex justify-center items-center gap-2 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition">
       <span>{children}</span>
-      <span className="text-lg">{label}</span>
-    </span>
+      <span className="text-sm md:text-base">{label}</span>
+    </div>
   );
 };
 
@@ -50,11 +50,11 @@ const footetItem = [
 ];
 export default function Connect({}: Props) {
   return (
-    <div className="min-w-[50%] text-white border-t-1 mt-6 bg-amber-400">
-      <div className="p-4 flex justify-center center">
-        {footetItem.map((item: any) => {
-          return <FooterItem children={item.children} label={item.label} />;
-        })}
+    <div className="flex flex-col min-w-[50%] text-white border-t-1 mt-6 bg-amber-400">
+      <div className="p-1 ">
+        {footetItem.map((item: any, index: number) => (
+          <FooterItem key={index} children={item.children} label={item.label} />
+        ))}
       </div>
     </div>
   );
